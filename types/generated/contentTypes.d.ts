@@ -677,6 +677,192 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Heading: Attribute.String & Attribute.Required;
+    body: Attribute.RichText & Attribute.Required;
+    Author: Attribute.String & Attribute.Required;
+    Image: Attribute.Media;
+    Author_BIO: Attribute.RichText & Attribute.Required;
+    Slug: Attribute.UID;
+    Categories: Attribute.String & Attribute.Required;
+    Seo_Title: Attribute.String & Attribute.Required;
+    Seo_Description: Attribute.RichText & Attribute.Required;
+    Seo_Keyword: Attribute.String;
+    Seo_Cntag: Attribute.String;
+    SchemaTitle: Attribute.String;
+    table_heading: Attribute.String;
+    table_data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqschemaFaqschema extends Schema.CollectionType {
+  collectionName: 'faqschemas';
+  info: {
+    singularName: 'faqschema';
+    pluralName: 'faqschemas';
+    displayName: 'faqschema';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    questionName: Attribute.String & Attribute.Required;
+    questionAnswer: Attribute.RichText & Attribute.Required;
+    Slug: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faqschema.faqschema',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faqschema.faqschema',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReviewReview extends Schema.CollectionType {
+  collectionName: 'reviews';
+  info: {
+    singularName: 'review';
+    pluralName: 'reviews';
+    displayName: 'Review';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Review_heading: Attribute.String;
+    Main_heading: Attribute.String;
+    Sub_heading: Attribute.RichText;
+    Rating: Attribute.Decimal;
+    UserID: Attribute.UID;
+    Date: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeotagSeotag extends Schema.CollectionType {
+  collectionName: 'seotags';
+  info: {
+    singularName: 'seotag';
+    pluralName: 'seotags';
+    displayName: 'seotag';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    keyword: Attribute.String & Attribute.Required;
+    Slug: Attribute.UID & Attribute.Required;
+    cntag: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seotag.seotag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seotag.seotag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'service';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    body_1: Attribute.RichText & Attribute.Required;
+    slug: Attribute.UID<'api::service.service', 'title'>;
+    Sub_Title: Attribute.String & Attribute.Required;
+    Sub_Title_2: Attribute.String;
+    Media: Attribute.Media;
+    Seodescription: Attribute.RichText & Attribute.Required;
+    Seokeyword: Attribute.String & Attribute.Required;
+    Formheading: Attribute.String & Attribute.Required;
+    Seotitle: Attribute.String & Attribute.Required;
+    Seocntag: Attribute.String;
+    body_2: Attribute.RichText;
+    body_title: Attribute.String & Attribute.Required;
+    SchemaTitle: Attribute.String;
+    table_heading: Attribute.String;
+    table_data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -693,6 +879,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog.blog': ApiBlogBlog;
+      'api::faqschema.faqschema': ApiFaqschemaFaqschema;
+      'api::review.review': ApiReviewReview;
+      'api::seotag.seotag': ApiSeotagSeotag;
+      'api::service.service': ApiServiceService;
     }
   }
 }

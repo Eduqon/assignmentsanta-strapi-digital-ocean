@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seotags",
+  "info": {
+    "singularName": "seotag",
+    "pluralName": "seotags",
+    "displayName": "seotag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "keyword": {
+      "type": "string",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "required": true
+    },
+    "cntag": {
+      "type": "string"
+    }
+  }
+}

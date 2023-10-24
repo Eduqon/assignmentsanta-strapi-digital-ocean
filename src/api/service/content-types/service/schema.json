@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "body_1": {
+      "type": "richtext",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    },
+    "Sub_Title": {
+      "type": "string",
+      "required": true
+    },
+    "Sub_Title_2": {
+      "type": "string"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Seodescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "Seokeyword": {
+      "type": "string",
+      "required": true
+    },
+    "Formheading": {
+      "type": "string",
+      "required": true
+    },
+    "Seotitle": {
+      "type": "string",
+      "required": true
+    },
+    "Seocntag": {
+      "type": "string"
+    },
+    "body_2": {
+      "type": "richtext"
+    },
+    "body_title": {
+      "type": "string",
+      "required": true
+    },
+    "SchemaTitle": {
+      "type": "string",
+      "required": false
+    },
+    "table_heading": {
+      "type": "string",
+      "required": false
+    },
+    "table_data": {
+      "type": "json"
+    }
+  }
+}

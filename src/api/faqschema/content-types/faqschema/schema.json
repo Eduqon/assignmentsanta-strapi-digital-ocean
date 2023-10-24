@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faqschemas",
+  "info": {
+    "singularName": "faqschema",
+    "pluralName": "faqschemas",
+    "displayName": "faqschema",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questionName": {
+      "type": "string",
+      "required": true
+    },
+    "questionAnswer": {
+      "type": "richtext",
+      "required": true
+    },
+    "Slug": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Review_heading": {
+      "type": "string"
+    },
+    "Main_heading": {
+      "type": "string"
+    },
+    "Sub_heading": {
+      "type": "richtext"
+    },
+    "Rating": {
+      "type": "decimal"
+    },
+    "UserID": {
+      "type": "uid"
+    },
+    "Date": {
+      "type": "date"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "Author": {
+      "type": "string",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Author_BIO": {
+      "type": "richtext",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid"
+    },
+    "Categories": {
+      "type": "string",
+      "required": true
+    },
+    "Seo_Title": {
+      "type": "string",
+      "required": true
+    },
+    "Seo_Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Seo_Keyword": {
+      "type": "string"
+    },
+    "Seo_Cntag": {
+      "type": "string"
+    },
+    "SchemaTitle": {
+      "type": "string"
+    },
+    "table_heading": {
+      "type": "string",
+      "required": false
+    },
+    "table_data": {
+      "type": "json"
+    }
+  }
+}
