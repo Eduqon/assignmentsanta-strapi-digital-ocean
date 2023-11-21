@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "other_assignmentservices",
+  "info": {
+    "singularName": "other-assignmentservice",
+    "pluralName": "other-assignmentservices",
+    "displayName": "OtherAssignmentservice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Other_Assignment_Services": {
+      "type": "json"
+    }
+  }
+}

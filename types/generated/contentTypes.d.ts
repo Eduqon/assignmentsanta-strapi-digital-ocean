@@ -746,6 +746,37 @@ export interface ApiFaqschemaFaqschema extends Schema.CollectionType {
   };
 }
 
+export interface ApiOtherAssignmentserviceOtherAssignmentservice
+  extends Schema.CollectionType {
+  collectionName: 'other_assignmentservices';
+  info: {
+    singularName: 'other-assignmentservice';
+    pluralName: 'other-assignmentservices';
+    displayName: 'OtherAssignmentservice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Other_Assignment_Services: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::other-assignmentservice.other-assignmentservice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::other-assignmentservice.other-assignmentservice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReviewReview extends Schema.CollectionType {
   collectionName: 'reviews';
   info: {
@@ -881,6 +912,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
       'api::faqschema.faqschema': ApiFaqschemaFaqschema;
+      'api::other-assignmentservice.other-assignmentservice': ApiOtherAssignmentserviceOtherAssignmentservice;
       'api::review.review': ApiReviewReview;
       'api::seotag.seotag': ApiSeotagSeotag;
       'api::service.service': ApiServiceService;
