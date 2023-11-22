@@ -876,6 +876,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     SchemaTitle: Attribute.String;
     table_heading: Attribute.String;
     table_data: Attribute.JSON;
+    related_post: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

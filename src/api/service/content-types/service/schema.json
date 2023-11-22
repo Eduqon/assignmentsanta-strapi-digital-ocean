@@ -37,7 +37,12 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Seodescription": {
       "type": "richtext",
@@ -74,6 +79,9 @@
       "required": false
     },
     "table_data": {
+      "type": "json"
+    },
+    "related_post": {
       "type": "json"
     }
   }
