@@ -80,9 +80,6 @@
     },
     "table_data": {
       "type": "json"
-    },
-    "related_post": {
-      "type": "json"
     }
   }
 }
